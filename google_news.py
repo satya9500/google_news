@@ -8,10 +8,11 @@ soup = BeautifulSoup(src,'lxml')
 links=soup.find_all("h3")
 
 urls = []
-
+i=1
 for h3_tags in links:
     a_tag = h3_tags.find('a')
     urls.append(a_tag)
+    print('%d) %s'%(i,a_tag.text))
+    print("\n")
+    i=i+1
 
-for url in urls:
-    print(url)
